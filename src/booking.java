@@ -1,0 +1,1093 @@
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//import java.sql.DriverManager;
+//import java.sql.PreparedStatement;
+//import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
+
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+
+/**
+ *
+ * @author SH4WEN
+ */
+public class booking extends javax.swing.JFrame implements MouseListener {
+
+    /**
+     * Creates new form booking
+     */
+    public booking() {
+        initComponents();
+        lbl1.addMouseListener(this);
+        lbl2.addMouseListener(this);
+        lbl3.addMouseListener(this);
+        lbl4.addMouseListener(this);
+        lbl5.addMouseListener(this);
+        lbl6.addMouseListener(this);
+        lbl7.addMouseListener(this);
+        lbl8.addMouseListener(this);
+        lbl9.addMouseListener(this);
+        lbl10.addMouseListener(this);
+        lbl11.addMouseListener(this);
+        lbl12.addMouseListener(this);
+        lbl13.addMouseListener(this);
+        lbl14.addMouseListener(this);
+        lbl15.addMouseListener(this);
+        lbl16.addMouseListener(this);
+        lbl17.addMouseListener(this);
+        lbl18.addMouseListener(this);
+        lbl19.addMouseListener(this);
+        lbl20.addMouseListener(this);
+        lbl21.addMouseListener(this);
+        lbl22.addMouseListener(this);
+        lbl23.addMouseListener(this);
+        lbl24.addMouseListener(this);
+        lbl25.addMouseListener(this);
+        lbl26.addMouseListener(this);
+        lbl27.addMouseListener(this);
+        lbl28.addMouseListener(this);
+        lbl28.addMouseListener(this);
+        lbl29.addMouseListener(this);
+        lbl30.addMouseListener(this);
+        lbl31.addMouseListener(this);
+        lbl32.addMouseListener(this);
+        lbl33.addMouseListener(this);
+        lbl34.addMouseListener(this);
+        lbl35.addMouseListener(this);
+        lbl36.addMouseListener(this);
+        lbl37.addMouseListener(this);
+        lbl38.addMouseListener(this);
+        lbl39.addMouseListener(this);
+        lbl40.addMouseListener(this);
+        lbl41.addMouseListener(this);
+        lbl42.addMouseListener(this);
+        lbl43.addMouseListener(this);
+        lbl44.addMouseListener(this);
+        lbl45.addMouseListener(this);
+        
+        
+        
+        
+        
+        
+       
+        
+        
+        
+        
+        
+        
+    }
+    
+    int seatno=0;
+    
+    //conncetionn in db
+   Connection con;
+   PreparedStatement pst;
+   ResultSet rs;
+
+  
+  
+// Connection in DB
+  public class DBConnection {
+    public static java.sql.Connection getConnection() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/bus_db";
+        String user = "root";
+        String password = "";
+        return DriverManager.getConnection(url, user, password);
+    }
+}
+
+  
+    public void Bill(){
+        String customer = txtcust.getText();
+        int seats1 = seatno;
+        String price = txtprice.getText();
+        String desti = txtdesti.getText();
+        
+        
+        
+        SimpleDateFormat date_form = new SimpleDateFormat("yyyy-MM-dd");
+        String date = date_form.format(txtdate.getDate());
+        
+        
+        
+        txtbill.setText(txtbill.getText()+ "\n" );
+        txtbill.setText(txtbill.getText()+ "---------------------------- Bus Ticket Receipt ----------------------------\n" );
+        txtbill.setText(txtbill.getText()+ "\n" );
+        
+        txtbill.setText(txtbill.getText()+ "Customer :" + "\t" + customer + "\n");
+        txtbill.setText(txtbill.getText()+ "--------------------------------------------------------------------------\n" );
+
+       
+        
+        txtbill.setText(txtbill.getText()+ "Trip Details \n" );
+        txtbill.setText(txtbill.getText()+ "Destnation :" + "\t" + desti + "\n");
+        txtbill.setText(txtbill.getText()+ "Seat No :" + "\t" + seats1 + "\n");
+        txtbill.setText(txtbill.getText()+ "Date of Travel :" + "\t" + date + "\n");
+        txtbill.setText(txtbill.getText()+ "--------------------------------------------------------------------------\n" );
+      
+        
+        txtbill.setText(txtbill.getText()+ "Payment Details \n");
+        txtbill.setText(txtbill.getText()+ "Total Fare :" + "\t" + price + "\n");
+        txtbill.setText(txtbill.getText()+ "\n" );
+        txtbill.setText(txtbill.getText()+ "\n" );
+        txtbill.setText(txtbill.getText()+ "------------------------------ Thank You !!! ----------------------------------\n");
+
+
+        
+        
+        
+    }
+
+    
+
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        lbl1 = new javax.swing.JLabel();
+        lbl2 = new javax.swing.JLabel();
+        lbl3 = new javax.swing.JLabel();
+        lbl4 = new javax.swing.JLabel();
+        lbl5 = new javax.swing.JLabel();
+        lbl6 = new javax.swing.JLabel();
+        lbl7 = new javax.swing.JLabel();
+        lbl8 = new javax.swing.JLabel();
+        lbl9 = new javax.swing.JLabel();
+        lbl10 = new javax.swing.JLabel();
+        lbl11 = new javax.swing.JLabel();
+        lbl12 = new javax.swing.JLabel();
+        lbl13 = new javax.swing.JLabel();
+        lbl14 = new javax.swing.JLabel();
+        lbl15 = new javax.swing.JLabel();
+        lbl16 = new javax.swing.JLabel();
+        lbl17 = new javax.swing.JLabel();
+        lbl18 = new javax.swing.JLabel();
+        lbl19 = new javax.swing.JLabel();
+        lbl20 = new javax.swing.JLabel();
+        lbl21 = new javax.swing.JLabel();
+        lbl22 = new javax.swing.JLabel();
+        lbl23 = new javax.swing.JLabel();
+        lbl24 = new javax.swing.JLabel();
+        lbl25 = new javax.swing.JLabel();
+        lbl26 = new javax.swing.JLabel();
+        lbl27 = new javax.swing.JLabel();
+        lbl28 = new javax.swing.JLabel();
+        lbl29 = new javax.swing.JLabel();
+        lbl30 = new javax.swing.JLabel();
+        lbl31 = new javax.swing.JLabel();
+        lbl32 = new javax.swing.JLabel();
+        lbl33 = new javax.swing.JLabel();
+        lbl34 = new javax.swing.JLabel();
+        lbl35 = new javax.swing.JLabel();
+        lbl36 = new javax.swing.JLabel();
+        lbl37 = new javax.swing.JLabel();
+        lbl38 = new javax.swing.JLabel();
+        lbl39 = new javax.swing.JLabel();
+        lbl40 = new javax.swing.JLabel();
+        lbl41 = new javax.swing.JLabel();
+        lbl42 = new javax.swing.JLabel();
+        lbl43 = new javax.swing.JLabel();
+        lbl45 = new javax.swing.JLabel();
+        lbl44 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        txtprice = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        txtcust = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel53 = new javax.swing.JLabel();
+        txtdesti = new javax.swing.JTextField();
+        txtdate = new com.toedter.calendar.JCalendar();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtbill = new javax.swing.JTextArea();
+        jPanel5 = new javax.swing.JPanel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(102, 204, 0));
+
+        jLabel1.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
+        jLabel1.setText("Booked Your Ticket Now!!!");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        lbl1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl1.setText("1");
+        lbl1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl1MouseClicked(evt);
+            }
+        });
+
+        lbl2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl2.setText("2");
+        lbl2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl3.setText("3");
+        lbl3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl4.setText("4");
+        lbl4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl5.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl5.setText("5");
+        lbl5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl6.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl6.setText("6");
+        lbl6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl7.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl7.setText("7");
+        lbl7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl8.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl8.setText("8");
+        lbl8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl9.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl9.setText("9");
+        lbl9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl10.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl10.setText("10");
+        lbl10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl11.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl11.setText("11");
+        lbl11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl12.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl12.setText("12");
+        lbl12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl13.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl13.setText("13");
+        lbl13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl14.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl14.setText("14");
+        lbl14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl15.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl15.setText("15");
+        lbl15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl16.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl16.setText("16");
+        lbl16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl17.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl17.setText("17");
+        lbl17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl18.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl18.setText("18");
+        lbl18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl19.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl19.setText("19");
+        lbl19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl20.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl20.setText("20");
+        lbl20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl21.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl21.setText("21");
+        lbl21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl22.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl22.setText("22");
+        lbl22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl23.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl23.setText("23");
+        lbl23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl24.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl24.setText("24");
+        lbl24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl25.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl25.setText("25");
+        lbl25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl26.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl26.setText("26");
+        lbl26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl27.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl27.setText("27");
+        lbl27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl28.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl28.setText("28");
+        lbl28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl29.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl29.setText("29");
+        lbl29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl30.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl30.setText("30");
+        lbl30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl31.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl31.setText("31");
+        lbl31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl32.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl32.setText("32");
+        lbl32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl33.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl33.setText("33");
+        lbl33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl34.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl34.setText("34");
+        lbl34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl35.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl35.setText("35");
+        lbl35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl36.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl36.setText("36");
+        lbl36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl37.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl37.setText("37");
+        lbl37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl38.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl38.setText("38");
+        lbl38.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl39.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl39.setText("39");
+        lbl39.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl40.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl40.setText("40");
+        lbl40.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl41.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl41.setText("41");
+        lbl41.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl42.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl42.setText("42");
+        lbl42.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl43.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl43.setText("43");
+        lbl43.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl45.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl45.setText("45");
+        lbl45.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        lbl44.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lbl44.setText("44");
+        lbl44.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Choose Your Seats");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbl41)
+                        .addGap(24, 24, 24)
+                        .addComponent(lbl42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl43))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lbl9)
+                                    .addComponent(lbl8)
+                                    .addComponent(lbl7)
+                                    .addComponent(lbl6)
+                                    .addComponent(lbl1)
+                                    .addComponent(lbl3)
+                                    .addComponent(lbl2)
+                                    .addComponent(lbl4)
+                                    .addComponent(lbl5)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbl10)))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbl19)
+                            .addComponent(lbl18)
+                            .addComponent(lbl17)
+                            .addComponent(lbl16)
+                            .addComponent(lbl11)
+                            .addComponent(lbl13)
+                            .addComponent(lbl12)
+                            .addComponent(lbl14)
+                            .addComponent(lbl15)
+                            .addComponent(lbl20))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lbl44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbl45))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lbl30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbl40))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl21)
+                            .addComponent(lbl22)
+                            .addComponent(lbl23)
+                            .addComponent(lbl24)
+                            .addComponent(lbl25)
+                            .addComponent(lbl26)
+                            .addComponent(lbl27)
+                            .addComponent(lbl28)
+                            .addComponent(lbl29))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbl38)
+                            .addComponent(lbl39)
+                            .addComponent(lbl37)
+                            .addComponent(lbl36)
+                            .addComponent(lbl35)
+                            .addComponent(lbl34)
+                            .addComponent(lbl33)
+                            .addComponent(lbl32)
+                            .addComponent(lbl31))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(37, 37, 37))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl11)
+                            .addComponent(lbl21)
+                            .addComponent(lbl31))
+                        .addGap(9, 9, 9)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl12)
+                            .addComponent(lbl22)
+                            .addComponent(lbl32))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl13)
+                            .addComponent(lbl23)
+                            .addComponent(lbl33))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl14)
+                            .addComponent(lbl24)
+                            .addComponent(lbl34))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl15)
+                            .addComponent(lbl25)
+                            .addComponent(lbl35))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl16)
+                            .addComponent(lbl26)
+                            .addComponent(lbl36))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl17)
+                            .addComponent(lbl27)
+                            .addComponent(lbl37))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl18)
+                            .addComponent(lbl28)
+                            .addComponent(lbl38))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl19)
+                            .addComponent(lbl29)
+                            .addComponent(lbl39))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl30)
+                            .addComponent(lbl40)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lbl1)
+                        .addGap(9, 9, 9)
+                        .addComponent(lbl2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl10)
+                            .addComponent(lbl20))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 15, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl41)
+                    .addComponent(lbl42)
+                    .addComponent(lbl43)
+                    .addComponent(lbl45)
+                    .addComponent(lbl44))
+                .addContainerGap())
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setText("BOOKED NOW");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        txtprice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpriceActionPerformed(evt);
+            }
+        });
+
+        jLabel51.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel51.setText("PRICE :");
+
+        jLabel52.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel52.setText("SEATS");
+
+        txtcust.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcustActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel13.setText("CUSTOMER NAME :");
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setText("Check");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel53.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel53.setText("DESTINATION :");
+
+        txtdesti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdestiActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addGap(33, 33, 33))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel53)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(24, 24, 24)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel51)
+                                .addComponent(jLabel13)))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel52))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtcust)
+                        .addComponent(txtprice, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
+                    .addComponent(txtdesti, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(257, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtcust, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(txtdesti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtbill.setColumns(20);
+        txtbill.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtbill.setRows(5);
+        jScrollPane1.setViewportView(txtbill);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+        );
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel5.setForeground(new java.awt.Color(0, 102, 0));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 87, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtdate, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(65, 65, 65)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void txtcustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcustActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcustActionPerformed
+
+    private void lbl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lbl1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
+//            // TODO add your handling code here:
+//        
+         // Initialize connection
+    try {
+        con = DBConnection.getConnection(); // Initialize the connection here
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Database connection failed!");
+        return; // Exit the method if connection fails
+    }
+
+    String customer = txtcust.getText();
+    int seats1 = seatno;
+    String price = txtprice.getText();
+    String destination =txtdesti.getText();
+    SimpleDateFormat date_form = new SimpleDateFormat("yyyy-MM-dd");
+    String date = date_form.format(txtdate.getDate());
+
+    try {   
+        pst = con.prepareStatement("SELECT * FROM book WHERE date = ? AND seatno = ?");
+        pst.setString(1, date);
+        pst.setInt(2, seats1);
+        rs = pst.executeQuery();
+        
+        if (rs.next()) {
+            JOptionPane.showMessageDialog(this, "Not Available!!");
+        } else {
+            pst = con.prepareStatement("INSERT INTO book(cname, seatno, price,destination, date) VALUES (?, ?, ?, ?, ?)");
+            pst.setString(1, customer);
+            pst.setInt(2, seats1); // Corrected index
+            pst.setString(3, price);
+            pst.setString(4, destination);
+            pst.setString(5, date);
+            
+            int k = pst.executeUpdate();
+            
+            if (k == 1) {
+                JOptionPane.showMessageDialog(this, "Seat Booked");
+                Bill();
+            } else {
+                JOptionPane.showMessageDialog(this, "Something went wrong");
+            }
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(booking.class.getName()).log(Level.SEVERE, null, ex);
+    } finally {
+        // Close resources
+        try {
+            if (rs != null) rs.close();
+            if (pst != null) pst.close();
+            if (con != null) con.close(); // Close the connection after use
+        } catch (SQLException e) {
+        }
+    }
+               
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        Check c = new Check();
+        c.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpriceActionPerformed
+
+    private void txtdestiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdestiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdestiActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new booking().setVisible(true);
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl1;
+    private javax.swing.JLabel lbl10;
+    private javax.swing.JLabel lbl11;
+    private javax.swing.JLabel lbl12;
+    private javax.swing.JLabel lbl13;
+    private javax.swing.JLabel lbl14;
+    private javax.swing.JLabel lbl15;
+    private javax.swing.JLabel lbl16;
+    private javax.swing.JLabel lbl17;
+    private javax.swing.JLabel lbl18;
+    private javax.swing.JLabel lbl19;
+    private javax.swing.JLabel lbl2;
+    private javax.swing.JLabel lbl20;
+    private javax.swing.JLabel lbl21;
+    private javax.swing.JLabel lbl22;
+    private javax.swing.JLabel lbl23;
+    private javax.swing.JLabel lbl24;
+    private javax.swing.JLabel lbl25;
+    private javax.swing.JLabel lbl26;
+    private javax.swing.JLabel lbl27;
+    private javax.swing.JLabel lbl28;
+    private javax.swing.JLabel lbl29;
+    private javax.swing.JLabel lbl3;
+    private javax.swing.JLabel lbl30;
+    private javax.swing.JLabel lbl31;
+    private javax.swing.JLabel lbl32;
+    private javax.swing.JLabel lbl33;
+    private javax.swing.JLabel lbl34;
+    private javax.swing.JLabel lbl35;
+    private javax.swing.JLabel lbl36;
+    private javax.swing.JLabel lbl37;
+    private javax.swing.JLabel lbl38;
+    private javax.swing.JLabel lbl39;
+    private javax.swing.JLabel lbl4;
+    private javax.swing.JLabel lbl40;
+    private javax.swing.JLabel lbl41;
+    private javax.swing.JLabel lbl42;
+    private javax.swing.JLabel lbl43;
+    private javax.swing.JLabel lbl44;
+    private javax.swing.JLabel lbl45;
+    private javax.swing.JLabel lbl5;
+    private javax.swing.JLabel lbl6;
+    private javax.swing.JLabel lbl7;
+    private javax.swing.JLabel lbl8;
+    private javax.swing.JLabel lbl9;
+    private javax.swing.JTextArea txtbill;
+    private javax.swing.JTextField txtcust;
+    private com.toedter.calendar.JCalendar txtdate;
+    private javax.swing.JTextField txtdesti;
+    private javax.swing.JTextField txtprice;
+    // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+        if (e.getSource() == lbl1 ){
+            seatno = 1;
+        }else if (e.getSource() == lbl2 ){
+            seatno = 2;
+        }else if (e.getSource() == lbl3 ){
+            seatno = 3;
+        }else if (e.getSource() == lbl4 ){
+            seatno = 4;
+        }else if (e.getSource() == lbl5 ){
+            seatno = 5;
+        }else if (e.getSource() == lbl6 ){
+            seatno = 6;
+        }else if (e.getSource() == lbl7 ){
+            seatno = 7;
+        }else if (e.getSource() == lbl8 ){
+            seatno = 8;
+        }else if (e.getSource() == lbl9 ){
+            seatno = 9;
+        }else if (e.getSource() == lbl10 ){
+            seatno = 10;
+        }else if (e.getSource() == lbl11 ){
+            seatno = 11;
+        }else if (e.getSource() == lbl12 ){
+            seatno = 12;
+        }else if (e.getSource() == lbl13 ){
+            seatno = 13;
+        }else if (e.getSource() == lbl14 ){
+            seatno = 14;
+        }else if (e.getSource() == lbl15 ){
+            seatno = 15;
+        }else if (e.getSource() == lbl16 ){
+            seatno = 16;
+        }else if (e.getSource() == lbl17 ){
+            seatno = 17;
+        }else if (e.getSource() == lbl18 ){
+            seatno = 18;
+        }else if (e.getSource() == lbl19 ){
+            seatno = 19;
+        }else if (e.getSource() == lbl20 ){
+            seatno = 20;
+        }else if (e.getSource() == lbl21 ){
+            seatno = 21;
+        }else if (e.getSource() == lbl22 ){
+            seatno = 22;
+        }else if (e.getSource() == lbl23 ){
+            seatno = 23;
+        }else if (e.getSource() == lbl24 ){
+            seatno = 24;
+        }else if (e.getSource() == lbl25 ){
+            seatno = 25;
+        }else if (e.getSource() == lbl26 ){
+            seatno = 26;
+        }else if (e.getSource() == lbl27 ){
+            seatno = 27;
+        }else if (e.getSource() == lbl28 ){
+            seatno = 28;
+        }else if (e.getSource() == lbl29 ){
+            seatno = 29;
+        }else if (e.getSource() == lbl30 ){
+            seatno = 30;
+        }else if (e.getSource() == lbl31 ){
+            seatno = 31;
+        }else if (e.getSource() == lbl32 ){
+            seatno = 32;
+        }else if (e.getSource() == lbl33 ){
+            seatno = 33;
+        }else if (e.getSource() == lbl34 ){
+            seatno = 34;
+        }else if (e.getSource() == lbl35 ){
+            seatno = 35;
+        }else if (e.getSource() == lbl36 ){
+            seatno = 36;
+        }else if (e.getSource() == lbl37 ){
+            seatno = 37;
+        }else if (e.getSource() == lbl38 ){
+            seatno = 38;
+        }else if (e.getSource() == lbl39 ){
+            seatno = 39;
+        }else if (e.getSource() == lbl40 ){
+            seatno = 40;
+        }else if (e.getSource() == lbl41 ){
+            seatno = 41;
+        }else if (e.getSource() == lbl42 ){
+            seatno = 42;
+        }else if (e.getSource() == lbl43 ){
+            seatno = 43;
+        }else if (e.getSource() == lbl44 ){
+            seatno = 44;
+        }else if (e.getSource() == lbl45 ){
+            seatno = 45;
+        }
+        JOptionPane.showMessageDialog(this,"Do you want in seat no: " + seatno +" ?" );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+      //  throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+     //   throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+     //   throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+    //    throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
